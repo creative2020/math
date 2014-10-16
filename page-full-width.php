@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page
+Template Name: Page Full Width
 */
 ?>
 <?php get_header(); ?>
@@ -21,7 +21,7 @@ Template Name: Page
 
 <div class="row">
     <div id="main" class="col-sm-10 col-sm-offset-1 flush">
-        <div id="content" class="col-sm-8">
+        <div id="content" class="col-sm-12">
            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
       <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
@@ -29,7 +29,7 @@ Template Name: Page
         </div>
             
    
-<?php get_template_part( 'tt', 'sidebar-main' ); ?>
+
         
         
         

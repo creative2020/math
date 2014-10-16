@@ -41,50 +41,13 @@ We place each student in classes based on where they ARE, rather than age or gra
         </div>
             
    
-        <div id="sidebar" class="col-xs-12 col-sm-4">
-            <a class="side-icon" href="#"><div class="mm-icon flush"><i class="fa fa-calendar-o"></i><h2>Schedule Appointment</h2></div></a>
-            <a class="side-icon" href="#"><div class="mm-icon flush"><i class="fa fa-rocket"></i><h2>Client Login</h2></div></a>
-            <a class="side-icon" href="#"><div class="mm-icon flush"><i class="fa fa-file-text"></i><h2>Newsletter Sign up</h2></div></a>
-            <a class="side-icon" href="#"><div class="mm-icon flush"><i class="fa fa-facebook-square"></i><h2>Like us!</h2></div></a>
-            <?php dynamic_sidebar( 'tt-sidebar' ); ?>
-        </div>
+<?php get_template_part( 'tt', 'sidebar-main' ); ?>
         
         
         
   </div><!--main-->  
 </div><!--row-->
 
+<?php get_template_part( 'what', 'we-do' ); ?>
 
-<div class="row">
-    <div id="section-header" class="col-sm-10 col-sm-offset-1">
-        <h2>What We Do</h2>
-    </div>    
-</div>
-<div class="row">
-    <div id="bucket-wrap" class="col-sm-10 col-sm-offset-1">
-        <div id="bucket" class="col-sm-3">
-            <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/images/img-fpo.png"/>
-            <h2>News</h2>
-        </div>
-        <div id="bucket" class="col-sm-3">
-            <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/images/img-fpo.png"/>
-            <h2>Classes</h2>
-            <p>After completing our complimentary assessment, students are place in one of our seven classes based on their individual skill level.</p>
-        </div>
-        <div id="bucket" class="col-sm-3">
-            <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/images/img-fpo.png"/>
-            <h2>Robotics</h2>
-            <p>Robotics Lab is a great opportunity for your child to build real-life robotic solutions using LEGO NXT robots from LEGO Education. Students from grade 4 and up will explore the engineering process to design, build and program their robot to perform every day tasks.</p>
-        </div>
-        <div id="bucket" class="col-sm-3">
-            <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/images/img-fpo.png"/>
-            <h2>1-on-1 Help</h2>
-            <p>Students can bring in homework from school and receive 1-on-1 assistance with their lessons. This is a great opportunity for students to ask the questions they weren’t able to ask in class. We also offer 1-on-1 Remote Tutoring.</p>
-        </div>
-    </div>    
-</div>
-
-
-
-
-  <?php get_footer() ?>
+<?php get_footer() ?>

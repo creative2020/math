@@ -40,6 +40,7 @@ body {
 	text-align: left;
 	font-size: 1.4em;
 	font-family: Arial, Helvetica, sans-serif;
+    background:url('../../images/web-pattern-wh10.png');
 	background-color:#E98300;
 }
 p {
@@ -151,7 +152,7 @@ p {
     border-color: transparent;
 }
 .dropdown-menu li a {
-    color:#E98300;
+    color:#fcda53;
     text-decoration:none;
 }
 .dropdown-menu {
@@ -167,7 +168,7 @@ p {
     font-size: 14px;
     text-align: left;
     list-style: none;
-    background-color: green;
+    background-color: #e98300;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border: 0px solid #ccc;
@@ -177,14 +178,26 @@ p {
     box-shadow: 0 0px 0px rgba(0,0,0,.175);
 }
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
-    color: blue;
+    color: white;
     text-decoration: none;
-    background-color: #E98300;
+    background-color: #dc5034;
 }
 /*Callout*/
 h3.callout-message {
     color:white;
     text-align:center;
+}
+/*Page Header*/
+#page-header {
+    height:7.0em;
+    background:url('../../images/blink.png') no-repeat top right;
+    background-size:contain;
+    background-color:#9fcf67;
+    border-top:4px solid black;
+}
+#page-header h1 {
+    color:white;
+    padding:0.1em 1.0em;
 }
 /*Quicklinks*/
 #quicklink-wrap {
@@ -246,6 +259,7 @@ h3.callout-message {
 
 #sidebar {
     background-color:#e98300;
+    border-right:1px solid #c66e13;
 }
 a.side-icon {
     text-align:center;
@@ -301,10 +315,52 @@ a.side-icon:hover .mm-icon{
     padding:1.0em 1.0em;
     background-color:white;
 }
+#bucket-wrap #bucket a {
+    color:black;
+    text-decoration:none;
+}
+#bucket-wrap #bucket a:hover {
+    color:#dc5034;
+    text-decoration:none;
+}
+#bucket-wrap #bucket:hover {
+    background-color:#dfe9f7;
+}
 #bucket-wrap #bucket h2 {
     text-align:center;
 }
-
+/*News*/
+#bucket-wrap #bucket a .list-wrap .row h2{
+    margin:0.3em 0;
+    padding:0;
+    text-align:left;
+    font-size:1.0em;
+    color:#e98300;
+}
+.news .list-wrap h2 a{
+    color:#e98300;
+}
+.news .list-wrap{
+    height:6.0em;
+    margin:0em -1.0em;
+    padding:1.0em 1.0em;
+}
+.news .list-wrap:hover{
+    background-color:#c8df8e;
+}
+.list-img {
+    width:55px;
+    height:55px;
+    background-color:transparent;
+    margin-right:0.5em;
+    padding:0;
+    overflow:hidden;
+}
+.list-img img{
+    width:100%;
+    align-self:center;
+}
+/*Footer*/
 #footer-wrap {
     color:white;
     background-color:#dc5034;
@@ -343,6 +399,7 @@ a.side-icon:hover .mm-icon{
 #copyright a:hover{
     color:#fcda53;
 }
+
 
 
 
