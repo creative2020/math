@@ -8,17 +8,17 @@
  * Tags: 2020
  * License: GNU General Public License v2.0 & Apache License 2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/licenses/LICENSE-2.0
- * GitHub Theme URI: https://github.com/creative2020/tt-tpl
+ * GitHub Theme URI: https://github.com/creative2020/math
  * GitHub Branch: master
 */
 
 /*
 colors
-@brand-primary  #428bca = #1 = TT Color 1 - name
-@brand-success  #5cb85c = #2 = TT Color 2 - name
-@brand-info     #5bc0de = #3 = TT Color 3 - name
-@brand-warning  #f0ad4e = #4 = TT Color 4 - name
-@brand-danger   #d9534f = #5 = TT Color 5 - name 
+@brand-primary  #DC5034 = #1 = TT Color 1 - red
+@brand-success  #E98300 = #2 = TT Color 2 - orange
+@brand-info     #9FCF67 = #3 = TT Color 3 - green md
+@brand-warning  #C8DF8E = #4 = TT Color 4 - green lt
+@brand-danger   #FCDA53 = #5 = TT Color 5 - yellow 
 
 Grays
 #2a2a2a - dk dk gray
@@ -34,3 +34,12 @@ gray
 @gray-light   = lighten(#000, 60%)
 @gray-lighter = lighten(#000, 93.5%)
 */
+
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0 auto;
+}
