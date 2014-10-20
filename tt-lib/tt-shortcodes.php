@@ -82,7 +82,7 @@ if ( $the_query->have_posts() ) {
         //$image = the_post_thumbnail( 'thumbnail' );
         $size = '250,125';
         $image = get_the_post_thumbnail( $post_id, $size, $attr );
-        if (empty( get_the_post_thumbnail( $post_id, $size, $attr ) )) {
+        if (empty( $image )) {
             $image = '<img src="/wp-content/themes/math/images/img-fpo.png">';
         }
          
