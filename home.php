@@ -7,7 +7,7 @@ Template Name: Home
 
 <div class="row">
     <div id="callout" class="col-sm-10 col-sm-offset-1 flush">
-        <h3 class="callout-message">Climb higher!</h3>
+        <?php echo do_shortcode('[tt_hp_message]'); ?>
     </div>
 </div> <!--row-->
 

@@ -184,9 +184,13 @@ p {
     background-color: #dc5034;
 }
 /*Callout*/
-h3.callout-message {
+.hp-message{
     color:white;
     text-align:center;
+    padding:0.8em;
+}
+.message {
+    font-size:1.5em;
 }
 /*Page Header*/
 #page-header {

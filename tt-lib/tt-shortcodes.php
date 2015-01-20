@@ -59,7 +59,7 @@ $args = array(
 	'order' => 'ASC',
 	'posts_per_page' => $limit,
     'cat' => $cat,
-    //'category_name' => $cat_name,
+    'category_name' => $cat_name,
 );
 $the_query = new WP_Query( $args );
 } else { 
@@ -103,7 +103,7 @@ if ( $the_query->have_posts() ) {
 	}
 } else {
 	// no posts found
-	echo '<h2>No ' . $type . ' found</h2>';
+	//echo '<h2>No ' . $type . ' found</h2>';
 }
     // after loop
     //$output .= '</ul>';
@@ -114,3 +114,102 @@ return $output;
 }
 
 ////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////// TT Homepage Message 1
+
+add_shortcode( 'tt_hp_message', 'tt_hp_message' ); // echo do_shortcode('[tt_shortcode limit="-1" cat_name="home"]');
+function tt_hp_message ( $atts ) {
+
+	// Attributes
+	extract( shortcode_atts(
+		array(
+			'name' => 'post',
+            'cat' => '-1',
+            'cat_name' => 'message',
+            'limit' => '1',
+            'type' => 'post',
+            'click' => 'n',
+		), $atts )
+	);
+    
+    /////////////////////////////////////// Variables
+$user_ID = get_current_user_id();
+$user_data = get_user_meta( $user_ID );
+$user_photo_id = $user_data[photo][0];
+$user_photo_url = wp_get_attachment_url( $user_photo_id );
+$user_photo_img = '<img src="' . $user_photo_url . '">';
+
+/////////////////////////////////////// All Query    
+if ($name == 'post') {
+	// The Query
+$args = array(
+	'post_type' => $type,
+	'post_status' => 'publish',
+	'order' => 'ASC',
+	'posts_per_page' => $limit,
+    'cat' => $cat,
+    'category_name' => $cat_name,
+);
+$the_query = new WP_Query( $args );
+} else { 
+	//nothing
+	}
+    
+global $post;
+
+// pre loop
+//$output = '<ul>';    
+
+// The Loop
+if ( $the_query->have_posts() ) {
+	while ( $the_query->have_posts() ) {
+		$the_query->the_post();
+		// pull meta for each post
+		$post_id = get_the_ID();
+		$permalink = get_permalink( $id );
+        $post = get_post();
+        //$image = the_post_thumbnail( 'thumbnail' );
+        $size = '250,125';
+        $has_feature_img = has_post_thumbnail( $post_id );
+
+        //HTML
+        if ( $has_feature_img == 'true') {
+        
+            $post_thumbnail_id = get_post_thumbnail_id( $post_id );
+            $image = get_the_post_thumbnail( $post_id, $size, $attr );
+            $img_url = wp_get_attachment_image_src( $post_thumbnail_id );
+            $img = '<img class="" src="'.$img_url[0].'"/> ';
+            
+        } else {
+            
+            $img = '';
+            $style = 'text-align:center;';
+            
+        }
+		if ( $click == 'y' ) {
+            
+            $output .= '<div class="hp-message">
+                    '.$img.'<span class="message"> '. $post->post_title.' <a class="btn btn-success btn-xs" href="'.$permalink.'">click for details</a></span>
+                </div>';
+            
+        } else {  
+    
+        $output .= '<div class="hp-message">
+                    '.$img.'<span class="message"> '. $post->post_title.' </span>
+                </div>';
+          }
+
+	}
+} else {
+	// no posts found
+	
+}
+    // after loop
+    //$output .= '</ul>';
+    
+/* Restore original Post Data */
+wp_reset_postdata();
+return $output;
+}
+
+/////////////////////////////////////////////////////////////////////////
