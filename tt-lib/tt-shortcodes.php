@@ -128,7 +128,7 @@ function tt_hp_message ( $atts ) {
             'cat_name' => 'message',
             'limit' => '1',
             'type' => 'post',
-            'click' => 'n',
+            'click' => 'y',
 		), $atts )
 	);
     
@@ -171,6 +171,8 @@ if ( $the_query->have_posts() ) {
         //$image = the_post_thumbnail( 'thumbnail' );
         $size = '250,125';
         $has_feature_img = has_post_thumbnail( $post_id );
+        $message_link = get_post_meta( $post_id, 'message_link' );
+        $message_link_show = get_post_meta( $post_id, 'message_link_show' );
 
         //HTML
         if ( $has_feature_img == 'true') {
@@ -186,16 +188,16 @@ if ( $the_query->have_posts() ) {
             $style = 'text-align:center;';
             
         }
-		if ( $click == 'y' ) {
+		if ( $message_link_show[0] == 'y' ) {
             
             $output .= '<div class="hp-message">
-                    '.$img.'<span class="message"> '. $post->post_title.' <a class="btn btn-success btn-xs" href="'.$permalink.'">click for details</a></span>
+                    '.$img.'<span class="message"> '. $post->post_title.' <a class="btn btn-success btn-xs" href="'.$message_link[0].'">click for details</a></span>
                 </div>';
             
         } else {  
     
         $output .= '<div class="hp-message">
-                    '.$img.'<span class="message"> '. $post->post_title.' </span>
+                    '.$img.'<span class="message"> '. $post->post_title.'</span>
                 </div>';
           }
 
@@ -213,3 +215,15 @@ return $output;
 }
 
 /////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////// TT rule
+add_shortcode( 'tt_rule', 'tt_rule' ); //line
+function tt_rule($atts, $content = null) {
+    extract(shortcode_atts(array(
+        'size'   => '1px',
+        'color'  => '#ccc',
+        'classes'  => 'col-sm-12 rule',
+    ), $atts ) );
+    return '<div class="' . $classes . '" style="border-top:' . $size . ' solid ' . $color .';padding:1.0em 0;"></div>';
+}
+////////////////////////////////////////////////////////
