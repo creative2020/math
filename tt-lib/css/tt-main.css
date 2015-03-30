@@ -198,6 +198,13 @@ p {
     font-size:1.5em;
 }
 /*Slider*/
+.metaslider .caption-wrap a {
+    color:white;
+}
+.metaslider .caption-wrap a:hover {
+    color:yellow;
+    text-decoration: none;
+}
 .metaslider .caption-wrap {
     padding:1.0em !important;
     height:50% !important;
