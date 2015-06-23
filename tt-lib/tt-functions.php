@@ -103,20 +103,20 @@ register_sidebar( $args );
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// disable admin area
 
-function tt_disable_admin_bar() { 
-	if( ! current_user_can('edit_dashboard') )
-		add_filter('show_admin_bar', '__return_false');	
-}
-add_action( 'after_setup_theme', 'tt_disable_admin_bar' );
- 
-
-function tt_redirect_admin(){
-	if ( ! current_user_can( 'edit_dashboard' ) ){
-		wp_redirect( site_url() . '/' );
-		exit;		
-	}
-}
-add_action( 'admin_init', 'tt_redirect_admin' );
+//function tt_disable_admin_bar() { 
+//	if( ! current_user_can('edit_dashboard') )
+//		add_filter('show_admin_bar', '__return_false');	
+//}
+//add_action( 'after_setup_theme', 'tt_disable_admin_bar' );
+// 
+//
+//function tt_redirect_admin(){
+//	if ( ! current_user_can( 'edit_dashboard' ) ){
+//		wp_redirect( site_url() . '/' );
+//		exit;		
+//	}
+//}
+//add_action( 'admin_init', 'tt_redirect_admin' );
 
 ////////////////////////////////////////////////////////
 
