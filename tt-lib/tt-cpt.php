@@ -8,9 +8,9 @@ function tt_register_cpt($single) {
     $plural = $single.'s';
     register_post_type(
         strtolower($single),
-        [
+        array(
             'label' => $plural,
-            'labels' => [
+            'labels' => array(
                 'add_new_item' => "Add New $single",
                 'edit_item' => "Edit $single",
                 'new_item' => "New $single",
@@ -18,9 +18,9 @@ function tt_register_cpt($single) {
                 'search_items' => "Search $plural",
                 'not_found' => "No $plural found",
                 'not_found_in_trash' => "No $plural found in Trash",
-            ],
+            ),
             'public' => true,
-        ]
+        )
     );
 }
 
