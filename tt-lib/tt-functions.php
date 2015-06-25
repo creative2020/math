@@ -129,3 +129,15 @@ add_action('admin_print_footer_scripts', 'tt_print_acf');
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
+// gravity forms user registration activation stuff
+
+add_action('activate_wp_head', function() {
+    add_action('tt_after_header', function() {
+        echo '<div class="row">';
+        echo '<div class="gf-activate col-sm-10 col-sm-offset-1">';
+    });
+    add_action('tt_before_footer', function() {
+        echo '</div>';
+        echo '</div>';
+    });
+});

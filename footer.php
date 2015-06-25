@@ -1,3 +1,5 @@
+<?php do_action('tt_before_footer'); ?>
+
 <div class="row">
     <div id="footer-wrap" class="col-sm-10 col-sm-offset-1">
         <div id="footer-col" class="col-sm-6">

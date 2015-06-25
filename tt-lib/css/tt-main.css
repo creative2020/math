@@ -465,3 +465,11 @@ and (max-width : 768px) {
 }
 
 } /* @media -------------END-----------------*/
+
+
+/*
+ * Gravity forms user reg activation pages
+ */
+.gf-activate {
+    background-color: white;
+}

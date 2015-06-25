@@ -65,8 +65,7 @@
 <div class="row">
 					
 					</div>
-    
-    
-    
-    
+
+<?php do_action('tt_after_header'); ?>
+
 <!--header-->
